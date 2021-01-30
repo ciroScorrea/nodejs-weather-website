@@ -9,6 +9,7 @@ const getForecast = require('./utils/getForecast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths por Express config
 const publicDirectory = path.join(__dirname, '../public/')
@@ -138,7 +139,7 @@ app.get('/weather', (req, res) => {
 */
 
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port.' + port)
 }) // dvlp 
 
