@@ -54,11 +54,13 @@ app.get('/weather', (req, res) => {
             error: 'An Address provided by you must be, little padawan'
         })
     } else {
-        getGeocode(req.query.search, (error, {latitude, longitude, location} = {}) => {
+        getGeocode(req.query.search, (error, {latitude, longitude, place_name} = {}) => {
             if(error){                  
                 return res.send({
                     error
                 })
+            } else {
+                console.log(latitude, longitude, place_name)
             }
     
             getForecast(latitude, longitude, (error, forecastData) => {
@@ -69,7 +71,7 @@ app.get('/weather', (req, res) => {
                 }
                 res.send({
                     forecast: forecastData,
-                    address: req.query.search
+                    address: place_name
                 })            
             })    
         })

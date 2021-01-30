@@ -9,7 +9,7 @@ getForecast = (latitude, longitude, callback) => {
             callback('Ocorreu o seguinte erro ' + body.error.info, undefined)
         } else {
             const data = body.current
-            callback(undefined, data.weather_descriptions[0] + '. It is currently ' + data.temperature + ' degress out. It feels like ' + data.feelslike + ' degrees out. ' + data.location )
+            callback(undefined, data.weather_descriptions[0] + '. It is currently ' + data.temperature + ' degress out. It feels like ' + data.feelslike + ' degrees out. Humidity: ' + data.humidity)
         }       
     })
 }
