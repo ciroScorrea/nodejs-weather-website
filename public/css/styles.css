@@ -1,25 +1,42 @@
 body{
     color: #333333;
     font-family: arial;
+    font-size: large;
     max-width: 650px;
     margin: 0 auto;
-    padding: 0 16px;
-
+    padding: 0 16px; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
+    background: url(../img/forecast.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
-.main-content{
+div {
     flex-grow: 1;
+    text-align: center;
+}
 
+div > p{
+    text-align: justify;
+}
+
+div > a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
 }
 
 
 footer{
-    color: #888888;
+    color: black;
     border-top: 1px solid #eeeeee;
     padding: 16px 0;
+    text-align: center;
     margin-top: 16px;
 }
 
@@ -34,7 +51,7 @@ h1{
 }
 
 header a {
-    color: #888888;
+    color: black;
     margin-right: 16px;
     text-decoration: none;
 }
@@ -46,6 +63,7 @@ header a {
 input {
     border: 1px solid #cccccc;
     padding: 8px;
+    width: 50%;
     
 }
 
@@ -55,4 +73,8 @@ button {
     background: #888888;
     color: white;
     padding: 8px;
+}
+
+div > p {
+    text-align: justify;
 }

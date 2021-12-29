@@ -8,10 +8,24 @@
 </head>
 
 <body>
-    <div class="main-content">
+    <div>
     {{>header}}
-    <p>This site was created by Ciro Correa. It uses data from mapbox.com and weatherstack!</p>
-    <img class="portrait other" src="/img/rony.png">
+        <p>This site was created by me while I was learning about Node.js on Udemy.</p> 
+        <p>If you are interested, the course is available at this link:</p>
+        <a href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/" target="_blank" rel="noopener noreferrer">
+            The Complete Node.js Developer Course (3rd Edition)
+        </a>
+        <p>So, thanks to Udemy and Andrew Mead, who was the course's instructor.</p>
+        
+        <p> Also, thanks to Mapbox, wich provides the necessary api to find the geocode for any location.</p>
+        <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer">
+            Mapbox
+        </a>
+        <p>Finally, thanks to Weatherstack, wich provides the necessary api to find the weather for any location.</p>
+        <a href="https://weatherstack.com/" target="_blank" rel="noopener noreferrer">
+            Weatherstack
+        </a>
+        {{!-- <img class="portrait other" src="/img/rony.png"> --}}
     </div>
     {{>footer}}
 </body>

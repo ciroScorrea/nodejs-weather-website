@@ -26,14 +26,14 @@ app.use(express.static(publicDirectory))
 
 app.get('', (req, res) =>{
     res.render('index', {
-        title: 'Weather App!',
+        title: 'Weather App',
         name: 'Ciro'
     })
 })
 
 app.get('/about', (req, res) =>{
     res.render('about', {
-        title: 'About me',
+        title: 'About Weather',
         name: 'Ciro'
     })
 })
@@ -41,8 +41,8 @@ app.get('/about', (req, res) =>{
 
 app.get('/help', (req, res)=> {
     res.render('help', {
-        title: 'What',
-        message: 'This is some helpful text',
+        title: 'Help',
+        message: 'Here, you can find some helpful information about this site.',
         name: 'Ciro'
     })
 })
@@ -51,7 +51,7 @@ app.get('/help', (req, res)=> {
 app.get('/weather', (req, res) => {
     if(!req.query.search){
         return res.send({
-            error: 'An Address provided by you must be, little padawan'
+            error: 'Please, enter a location.'
         })
     } else {
         getGeocode(req.query.search, (error, {latitude, longitude, place_name} = {}) => {
@@ -78,18 +78,6 @@ app.get('/weather', (req, res) => {
     }
 })
 
-app.get('/products', (req, res) => {
-    if(!req.query.search){
-        return res.send({
-            error: 'You must provide a search term'
-        })
-    }
-    console.log(req.query)
-    res.send({
-      products: []  
-    })
-})
-
 //Should be the last option, if node dont't find nothing, it will run this code
 app.get('/help/*', (req, res) => {
     res.render('error', {
@@ -106,39 +94,6 @@ app.get('*', (req, res) => {
         name: 'Ciro'
     })
 })
-
-
-// app.com
-//http://localhost:3000
-//app.com/help
-//http://localhost:3000/help
-//app.com/about
-//http://localhost:3000/about
-
-/*
-
-app.get('', (req, res) => {
-    res.send('Express')
-})
-
-app.get('/help', (req, res) => {
-    res.send({
-        name: 'Andrew',
-        age: 45
-    })
-})
-
-app.get('/about', (req, res) => {
-    res.send('<h1>About Page</h1>')
-})
-
-app.get('/weather', (req, res) => {
-    res.send({
-        forecast: 'It is raining outside',
-        location: 'Surely you are in Curitiba'
-    })
-})
-*/
 
 
 app.listen(port, () => {
