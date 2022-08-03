@@ -12,14 +12,14 @@
         {{>header}}
         <p>{{message}}</p>
         <p>It was developed with Node and it has Express and HBS dependencies.</p> 
-        <p>It consumes two APIs, the first API get the geocode from a location.</p>
+        <p>It consumes two APIs, the first API gets the geocode from a location.</p>
         <p>So, after you fill the form with the location's name, the API will look for the latitude and longitude code from it.</p>
         <p>The API will get the geocode from the first location found. Example:</p>
         <p>If you fill the form with Saint Petersburg, it will show the weather from Saint Petersbug in Russia.</p>
         <p>Otherwise, if you fill the form wiht Saint Petersburg Florida, it will show the weather from a city in United States.</p>
-        <p>Also, it is possible to looking for neighborhood, tourist spots and things like that.</p>
+        <p>Also, it is possible to look for neighborhoods, tourist spots and things like that.</p>
         <p>Once a location is found, the second API will be executed using the geocode to get the weather information.</p>
-        <p>If no one location is found, it returns a message to user.</p>
+        <p>If no location is found, it returns a message to the user.</p>
     </div>
     {{>footer}}
 </body>
